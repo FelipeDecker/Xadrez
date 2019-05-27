@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Xadrez.Tabuleiro;
 
 namespace Xadrez
 {
@@ -10,6 +6,7 @@ namespace Xadrez
     {
         static void Main(string[] args)
         {
+            Posicao posicao = new Posicao(3,4);
         }
     }
 }
