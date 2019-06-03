@@ -9,6 +9,7 @@ namespace Xadrez
         {
             for (int l = 0; l < tabuleiro.Linha; l++)
             {
+                Console.Write(8 - l + " ");
                 for (int c = 0; c < tabuleiro.Coluna; c++)
                 {
                     if (tabuleiro.Peca(l, c) == null)
@@ -17,10 +18,27 @@ namespace Xadrez
                     }
                     else
                     {
-                        Console.Write(tabuleiro.Peca(l, c) + " ");
+                        ImprimirPeca(tabuleiro.Peca(l, c));
+                        Console.Write(" ");
                     }
                 }
                 Console.WriteLine();
+            }
+            Console.WriteLine("  A B C D E F G H");
+        }
+
+        public static void ImprimirPeca(Peca peca)
+        {
+            if (peca.Cor == Cor.Branco)
+            {
+                Console.Write(peca);
+            }
+            else
+            {
+                ConsoleColor aux = Console.ForegroundColor;
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(peca);
+                Console.ForegroundColor = aux;
             }
         }
     }
