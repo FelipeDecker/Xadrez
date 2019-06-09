@@ -1,4 +1,7 @@
-﻿namespace Xadrez.Tab
+﻿using System;
+using Xadrez.Xadrez;
+
+namespace Xadrez.Tab
 { 
     public class Tabuleiro
     {
@@ -37,6 +40,24 @@
             }
             Pecas[posicao.Linha, posicao.Coluna] = peca;
             peca.Posicao = posicao;
+        }
+
+        internal void ColocarPeca(Torre torre, PosicaoXadrez posicaoXadrez)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Peca RetirarPeca(Posicao posicao)
+        {
+            if (Peca(posicao) == null)
+            {
+                return null;
+            }
+
+            Peca aux = Peca(posicao);
+            aux.Posicao = null;
+            Pecas[posicao.Linha, posicao.Coluna] = null;
+            return aux;
         }
 
         public bool PosicaoValida(Posicao posicao)

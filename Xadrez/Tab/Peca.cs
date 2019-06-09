@@ -14,5 +14,10 @@
             Tabuleiro = tabuleiro;
             Movimentos = 0;
         }
+
+        public void IncrementarMovimento()
+        {
+            Movimentos++;
+        }
     }
 }

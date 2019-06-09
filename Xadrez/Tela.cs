@@ -1,5 +1,6 @@
 ﻿using System;
 using Xadrez.Tab;
+using Xadrez.Xadrez;
 
 namespace Xadrez
 {
@@ -25,6 +26,22 @@ namespace Xadrez
                 Console.WriteLine();
             }
             Console.WriteLine("  A B C D E F G H");
+        }
+
+        public static PosicaoXadrez LerPosicao()
+        {
+            string posicaoDigitada = Console.ReadLine();
+
+            posicaoDigitada.Split();
+
+            string digitado = posicaoDigitada[0].ToString().ToUpper();
+
+            char coluna = digitado[0];
+
+
+            int linha = int.Parse(posicaoDigitada[1] + "");
+
+            return new PosicaoXadrez(coluna, linha);
         }
 
         public static void ImprimirPeca(Peca peca)
