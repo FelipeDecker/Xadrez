@@ -7,6 +7,8 @@
         public int Movimentos { get; protected set; }
         public Tabuleiro Tabuleiro { get; protected set; }
 
+        public abstract bool[,] MovimentosPossiveis();
+
         public Peca(Tabuleiro tabuleiro, Cor cor)
         {
             Posicao = null;
@@ -18,6 +20,11 @@
         public void IncrementarMovimento()
         {
             Movimentos++;
+        }
+
+        public void DecrementarMovimento()
+        {
+            Movimentos--;
         }
 
         public bool ExisteMovimentosPossiveis()
@@ -42,7 +49,5 @@
         {
             return MovimentosPossiveis()[posicao.Linha, posicao.Coluna];
         }
-
-        public abstract bool[,] MovimentosPossiveis();
     }
 }
