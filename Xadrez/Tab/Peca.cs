@@ -35,7 +35,7 @@
             {
                 for (int c = 0; c < Tabuleiro.Coluna; c++)
                 {
-                    if (mat[l, c] )
+                    if (mat[l, c])
                     {
                         return true;
                     }
@@ -45,7 +45,7 @@
             return false;
         }
 
-        public bool PodeMoverPara(Posicao posicao)
+        public bool MovimentoPossivel(Posicao posicao)
         {
             return MovimentosPossiveis()[posicao.Linha, posicao.Coluna];
         }
