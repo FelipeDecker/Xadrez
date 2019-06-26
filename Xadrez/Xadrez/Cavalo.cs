@@ -14,6 +14,11 @@ namespace Xadrez.Xadrez
 
         }
 
+        public override string ToString()
+        {
+            return "C";
+        }
+
         private bool PodeMover(Posicao posicao)
         {
             Peca peca = Tabuleiro.Peca(posicao);
