@@ -113,6 +113,11 @@ namespace Xadrez
         {
             string posicaoDigitada = Console.ReadLine();
 
+            if (string.IsNullOrEmpty((posicaoDigitada)))
+            {
+                throw new TabuleiroExeption("Digite algum valor");
+            }
+
             posicaoDigitada.Split();
 
             string digitado = posicaoDigitada[0].ToString().ToUpper();
