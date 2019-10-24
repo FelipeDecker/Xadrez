@@ -44,54 +44,70 @@ namespace Xadrez.Xadrez
 
             if (Cor == Cor.Branco)
             {
-                Posicao.DefinirValor(Posicao.Linha - 1, Posicao.Coluna);
+                // frente 1 posição
+
+                posicao.DefinirValor(Posicao.Linha - 1, Posicao.Coluna);
                 if (Tabuleiro.PosicaoValida(posicao) && Livre(posicao))
                 {
-                    mat[Posicao.Linha, Posicao.Coluna] = true;
+                    mat[posicao.Linha, posicao.Coluna] = true;
                 }
 
-                Posicao.DefinirValor(Posicao.Linha - 2, Posicao.Coluna);
+                // frente 2 posição
+
+                posicao.DefinirValor(Posicao.Linha - 2, Posicao.Coluna);
                 if (Tabuleiro.PosicaoValida(posicao) && Livre(posicao) && Movimentos == 0)
                 {
-                    mat[Posicao.Linha, Posicao.Coluna] = true;
+                    mat[posicao.Linha, posicao.Coluna] = true;
                 }
 
-                Posicao.DefinirValor(Posicao.Linha - 1, Posicao.Coluna - 1);
-                if (Tabuleiro.PosicaoValida(posicao) && Livre(posicao))
+                // esquerda
+
+                posicao.DefinirValor(Posicao.Linha - 1, Posicao.Coluna - 1);
+                if (Tabuleiro.PosicaoValida(posicao) && ExisteInimigo(posicao))
                 {
-                    mat[Posicao.Linha, Posicao.Coluna] = true;
+                    mat[posicao.Linha, posicao.Coluna] = true;
                 }
 
-                Posicao.DefinirValor(Posicao.Linha - 1, Posicao.Coluna + 1);
-                if (Tabuleiro.PosicaoValida(posicao) && Livre(posicao))
+                // direita
+
+                posicao.DefinirValor(Posicao.Linha - 1, Posicao.Coluna + 1);
+                if (Tabuleiro.PosicaoValida(posicao) && ExisteInimigo(posicao))
                 {
-                    mat[Posicao.Linha, Posicao.Coluna] = true;
+                    mat[posicao.Linha, posicao.Coluna] = true;
                 }
             }
             else if (Cor == Cor.Preto)
             {
-                Posicao.DefinirValor(Posicao.Linha + 1, Posicao.Coluna);
+                // frente 1 posição
+
+                posicao.DefinirValor(Posicao.Linha + 1, Posicao.Coluna);
                 if (Tabuleiro.PosicaoValida(posicao) && Livre(posicao))
                 {
-                    mat[Posicao.Linha, Posicao.Coluna] = true;
+                    mat[posicao.Linha, posicao.Coluna] = true;
                 }
 
-                Posicao.DefinirValor(Posicao.Linha + 2, Posicao.Coluna);
+                // frente 2 posição
+
+                posicao.DefinirValor(Posicao.Linha + 2, Posicao.Coluna);
                 if (Tabuleiro.PosicaoValida(posicao) && Livre(posicao) && Movimentos == 0)
                 {
-                    mat[Posicao.Linha, Posicao.Coluna] = true;
+                    mat[posicao.Linha, posicao.Coluna] = true;
                 }
 
-                Posicao.DefinirValor(Posicao.Linha + 1, Posicao.Coluna + 1);
-                if (Tabuleiro.PosicaoValida(posicao) && Livre(posicao))
+                // esquerda
+
+                posicao.DefinirValor(Posicao.Linha + 1, Posicao.Coluna + 1);
+                if (Tabuleiro.PosicaoValida(posicao) && ExisteInimigo(posicao))
                 {
-                    mat[Posicao.Linha, Posicao.Coluna] = true;
+                    mat[posicao.Linha, posicao.Coluna] = true;
                 }
 
-                Posicao.DefinirValor(Posicao.Linha + 1, Posicao.Coluna - 1);
-                if (Tabuleiro.PosicaoValida(posicao) && Livre(posicao))
+                // direita
+
+                posicao.DefinirValor(Posicao.Linha + 1, Posicao.Coluna - 1);
+                if (Tabuleiro.PosicaoValida(posicao) && ExisteInimigo(posicao))
                 {
-                    mat[Posicao.Linha, Posicao.Coluna] = true;
+                    mat[posicao.Linha, posicao.Coluna] = true;
                 }
             }
             else

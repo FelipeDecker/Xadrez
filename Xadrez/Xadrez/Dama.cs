@@ -33,7 +33,7 @@ namespace Xadrez.Xadrez
 
             //diagonal superior esquerda
 
-            posicao.DefinirValor(posicao.Linha - 1, posicao.Coluna - 1);
+            posicao.DefinirValor(Posicao.Linha - 1, Posicao.Coluna - 1);
             while (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
             {
                 mat[posicao.Linha, posicao.Coluna] = true;
@@ -46,7 +46,7 @@ namespace Xadrez.Xadrez
 
             //diagonal superior direita
 
-            posicao.DefinirValor(posicao.Linha - 1, posicao.Coluna + 1);
+            posicao.DefinirValor(Posicao.Linha - 1, Posicao.Coluna + 1);
             while (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
             {
                 mat[posicao.Linha, posicao.Coluna] = true;
@@ -59,7 +59,7 @@ namespace Xadrez.Xadrez
 
             //diagonal inferior direita
 
-            posicao.DefinirValor(posicao.Linha + 1, posicao.Coluna + 1);
+            posicao.DefinirValor(Posicao.Linha + 1, Posicao.Coluna + 1);
             while (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
             {
                 mat[posicao.Linha, posicao.Coluna] = true;
@@ -72,7 +72,7 @@ namespace Xadrez.Xadrez
 
             //diagonal inferior esquerda
 
-            posicao.DefinirValor(posicao.Linha + 1, posicao.Coluna - 1);
+            posicao.DefinirValor(Posicao.Linha + 1, Posicao.Coluna - 1);
             while (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
             {
                 mat[posicao.Linha, posicao.Coluna] = true;

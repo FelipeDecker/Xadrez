@@ -31,11 +31,15 @@ namespace Xadrez.Xadrez
 
             Posicao posicao = new Posicao(0, 0);
 
+            // superior esquerda
+
             posicao.DefinirValor(Posicao.Linha - 1, Posicao.Coluna - 2);
             if (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
             {
                 mat[posicao.Linha, posicao.Coluna] = true;
             }
+
+            // superior direita
 
             posicao.DefinirValor(Posicao.Linha - 1, Posicao.Coluna + 2);
             if (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
@@ -43,11 +47,15 @@ namespace Xadrez.Xadrez
                 mat[posicao.Linha, posicao.Coluna] = true;
             }
 
+            // inferior esquerda
+
             posicao.DefinirValor(Posicao.Linha + 1, Posicao.Coluna - 2);
             if (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
             {
                 mat[posicao.Linha, posicao.Coluna] = true;
             }
+
+            // inferior direita
 
             posicao.DefinirValor(Posicao.Linha + 1, Posicao.Coluna + 2);
             if (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
@@ -55,11 +63,15 @@ namespace Xadrez.Xadrez
                 mat[posicao.Linha, posicao.Coluna] = true;
             }
 
+            // superior esquerda s
+
             posicao.DefinirValor(Posicao.Linha - 2, Posicao.Coluna - 1);
             if (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
             {
                 mat[posicao.Linha, posicao.Coluna] = true;
             }
+
+            // superior direita s 
 
             posicao.DefinirValor(Posicao.Linha - 2, Posicao.Coluna + 1);
             if (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
@@ -67,11 +79,15 @@ namespace Xadrez.Xadrez
                 mat[posicao.Linha, posicao.Coluna] = true;
             }
 
+            // inferior esquerda
+
             posicao.DefinirValor(Posicao.Linha + 2, Posicao.Coluna - 1);
             if (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))
             {
                 mat[posicao.Linha, posicao.Coluna] = true;
             }
+
+            // inferior direita
 
             posicao.DefinirValor(Posicao.Linha + 2, Posicao.Coluna + 1);
             if (Tabuleiro.PosicaoValida(posicao) && PodeMover(posicao))

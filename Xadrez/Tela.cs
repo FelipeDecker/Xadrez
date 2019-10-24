@@ -98,7 +98,7 @@ namespace Xadrez
                     }
 
                     ImprimirPeca(tabuleiro.Peca(l, c));
-
+                    Console.BackgroundColor = fundoOriginal;
                 }
 
                 Console.WriteLine();
