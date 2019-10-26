@@ -153,6 +153,26 @@ namespace Xadrez.Xadrez
                 throw new TabuleiroExeption("Não pode se colocar em xeque!");
             }
 
+            Peca pecaMovida = Tabuleiro.Peca(posicaoDestino);
+
+            //Jogada Especial - Promocao
+
+            if (pecaMovida is Peao)
+            {
+                if ((pecaMovida.Cor == Cor.Branco && posicaoDestino.Linha == 0) || (pecaMovida.Cor == Cor.Preto && posicaoDestino.Linha == 7))
+                {
+                    pecaMovida = Tabuleiro.RetirarPeca(posicaoDestino);
+                    Pecas.Remove(pecaMovida);
+
+                    string escolha = Tela.ImprimirPromocao();
+
+                    Peca escolhida = GerarEscolhida(escolha, pecaMovida.Cor);
+
+                    Tabuleiro.ColocarPeca(escolhida, posicaoDestino);
+                    Pecas.Add(escolhida);
+                }
+            }
+
             if (EstaEmXeque(CorAdversaria(CorAtual)))
             {
                 Xeque = true;
@@ -172,8 +192,6 @@ namespace Xadrez.Xadrez
                 MudaJogador();
             }
 
-            Peca pecaMovida = Tabuleiro.Peca(posicaoDestino);
-
             //Jogada Especial - EnPassant
 
             if (pecaMovida is Peao && (posicaoDestino.Linha == posicaoOrigem.Linha - 2 || posicaoDestino.Linha == posicaoOrigem.Linha + 2))
@@ -184,6 +202,37 @@ namespace Xadrez.Xadrez
             {
                 VulneravelEnPassant = null;
             }
+        }
+
+        public Peca GerarEscolhida(string escolha, Cor cor)
+        {
+            Peca escolhida;
+
+            if (escolha == "D")
+            {
+                escolhida = new Dama(Tabuleiro, cor);
+            }
+            else if (escolha == "T")
+            {
+                escolhida = new Torre(Tabuleiro, cor);
+
+            }
+            else if (escolha == "B")
+            {
+                escolhida = new Bispo(Tabuleiro, cor);
+
+            }
+            else if (escolha == "C")
+            {
+                escolhida = new Cavalo(Tabuleiro, cor);
+
+            }
+            else
+            {
+                throw new TabuleiroExeption("Peça invalida");
+            }
+
+            return escolhida;
         }
 
         public void ValidarOrigem(Posicao posicao)

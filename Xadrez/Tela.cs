@@ -152,5 +152,29 @@ namespace Xadrez
                 Console.Write(" ");
             }
         }
+
+        public static string ImprimirPromocao()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Peça promovida!");
+            Console.WriteLine();
+            Console.WriteLine("Digite uma das opções");
+            Console.WriteLine();
+            Console.WriteLine("D - Dama");
+            Console.WriteLine("T - Torre");
+            Console.WriteLine("B - Bispo");
+            Console.WriteLine("C - Cavalo");
+
+            string posicaoDigitada = Console.ReadLine();
+
+            if (string.IsNullOrEmpty((posicaoDigitada)))
+            {
+                throw new TabuleiroExeption("Digite algum valor");
+            }
+
+            string digitado = posicaoDigitada.ToUpper();
+
+            return digitado;
+        }
     }
 }
